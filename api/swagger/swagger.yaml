@@ -58,6 +58,21 @@ definitions:
     required:
       - name
       - description
+  GetGameSystemResponse:
+    type: object
+    properties:
+      id:
+        type: number
+        description: Identifier
+      name:
+        type: string
+        description: Name of the Game System
+      description:
+        type: string
+        description: Description of the Game System
+    required:
+      - name
+      - description
   ErrorResponse:
     required:
       - message
