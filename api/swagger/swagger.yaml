@@ -18,26 +18,22 @@ consumes:
 produces:
   - application/json
 paths:
-  /hello:
-    # binds a127 app logic to a route
-    x-swagger-router-controller: hello_world
-    get:
-      description: Returns 'Hello' to the caller
-      # used as the method name of the controller
-      operationId: hello
+  /gamesystems:
+    x-swagger-router-controller: gamesystem.controller
+    post:
+      description: Add a new Game System to the list
+      operationId: createGameSystem
       parameters:
-        - name: name
-          in: query
-          description: The name of the person to whom to say hello
-          required: false
-          type: string
+        - in: body
+          name: gamesystem
+          description: The Game System to create
+          schema:
+            $ref: "#/definitions/GameSystem"
       responses:
-        "200":
+        "201":
           description: Success
           schema:
-            # a pointer to a definition
-            $ref: "#/definitions/HelloWorldResponse"
-        # responses may fall through to errors
+            $ref: "#/definitions/GetGameSystemResponse"
         default:
           description: Error
           schema:
