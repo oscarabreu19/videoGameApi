@@ -131,6 +131,18 @@ definitions:
           $ref: "#/definitions/GetGameSystemResponse"
     required:
       - gamesystems
+  GeneralResponse:
+    type: object
+    properties:
+      success:
+        type: number
+        description: Return 1 if successful
+      description:
+        type: string
+        description: A short comment
+    required:
+      - success
+      - description
   ErrorResponse:
     required:
       - message
