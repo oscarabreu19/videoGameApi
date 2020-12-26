@@ -163,6 +163,7 @@ definitions:
         type: string
         description: Description of the Game System
     required:
+      - id
       - name
       - description
   GetGameSystemListResponse:
