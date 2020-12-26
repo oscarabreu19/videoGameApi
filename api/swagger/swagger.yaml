@@ -69,6 +69,14 @@ definitions:
     required:
       - name
       - description
+  GetGameSystemListResponse:
+    properties:
+      gamesystems:
+        type: array
+        items:
+          $ref: "#/definitions/GetGameSystemResponse"
+    required:
+      - gamesystems
   ErrorResponse:
     required:
       - message
