@@ -114,6 +114,30 @@ paths:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
+  VideoGame:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of de Video Game
+      developer:
+        type: string
+        description: Name of Developer/publisher of the Video Game
+      gamesystem:
+        type: string
+        description: Name of the Game System
+      genre:
+        type: string
+        description: Name of de genre/style of the Video Game
+      year:
+        type: number
+        description: Release year
+    required:
+      - name
+      - developer
+      - gamesystem
+      - genre
+      - year
   GameSystem:
     type: object
     properties:
