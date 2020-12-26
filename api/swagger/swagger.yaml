@@ -38,6 +38,18 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+    get:
+      description: Get the Game System list
+      operationId: getGameSystems
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetGameSystemListResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
