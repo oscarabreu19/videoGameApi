@@ -186,6 +186,14 @@ definitions:
       - gamesystem
       - genre
       - year
+  GetVideoGameListResponse:
+    properties:
+      videogames:
+        type: array
+        items:
+          $ref: "#/definitions/GetVideoGameResponse"
+    required:
+      - videogames
   GameSystem:
     type: object
     properties:
