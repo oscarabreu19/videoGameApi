@@ -138,6 +138,34 @@ definitions:
       - gamesystem
       - genre
       - year
+  GetVideoGameResponse:
+    type: object
+    properties:
+      id:
+        type: number
+        description: Identifier
+      name:
+        type: string
+        description: Name of de Video Game
+      developer:
+        type: string
+        description: Name of Developer/publisher of the Video Game
+      gamesystem:
+        type: string
+        description: Name of the Game System
+      genre:
+        type: string
+        description: Name of de genre/style of the Video Game
+      year:
+        type: number
+        description: Release year
+    required:
+      - id
+      - name
+      - developer
+      - gamesystem
+      - genre
+      - year
   GameSystem:
     type: object
     properties:
