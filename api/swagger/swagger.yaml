@@ -130,6 +130,18 @@ paths:
           description: Error
           schema:
            $ref: "#/definitions/ErrorResponse"
+    get:
+      description: Get a Video Game list
+      operationId: getVideoGames
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetVideoGameListResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
