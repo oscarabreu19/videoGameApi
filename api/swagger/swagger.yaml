@@ -188,6 +188,24 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+    delete:
+      description: Delete a Video Game by ID
+      operationId: deleteVideoGame
+      parameters:
+        - name: id
+          description: ID of the Video Game to delete
+          in: path
+          type: number
+          required: true
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GeneralResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
