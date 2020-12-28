@@ -164,6 +164,30 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+    put:
+      description: Update a Video Game by ID
+      operationId: updateVideoGame
+      parameters:
+        - name: id
+          description: ID of the Video Game to update
+          in: path
+          type: number
+          required: true
+        - name: videogame
+          description: Video Game to update
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/VideoGame"
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetVideoGameResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
