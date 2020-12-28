@@ -57,7 +57,7 @@ paths:
       operationId: getGameSystemById
       parameters:
         - name: id
-          type: number
+          type: string
           in: path
           required: true
       responses:
@@ -75,7 +75,7 @@ paths:
       parameters:
         - name: id
           description: Id of the Game System
-          type: number
+          type: string
           in: path
           required: true
         - name: gamesystem
@@ -98,7 +98,7 @@ paths:
       parameters:
         - name: id
           description: Id of the Game System
-          type: number
+          type: string
           in: path
           required: true
       responses:
@@ -150,7 +150,7 @@ paths:
       parameters:
         - name: id
           in: path
-          type: number
+          type: string
           required: true
       responses:
         "200":
@@ -168,7 +168,7 @@ paths:
         - name: id
           description: ID of the Video Game to update
           in: path
-          type: number
+          type: string
           required: true
         - name: videogame
           description: Video Game to update
@@ -191,7 +191,7 @@ paths:
         - name: id
           description: ID of the Video Game to delete
           in: path
-          type: number
+          type: string
           required: true
       responses:
         "200":
