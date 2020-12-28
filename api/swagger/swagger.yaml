@@ -27,6 +27,7 @@ paths:
         - in: body
           name: gamesystem
           description: The Game System to create
+          required: true
           schema:
             $ref: "#/definitions/GameSystem"
       responses:
@@ -81,6 +82,7 @@ paths:
         - name: gamesystem
           description: The Game System to update
           in: body
+          required: true
           schema:
             $ref: "#/definitions/GameSystem"
       responses:
@@ -119,6 +121,7 @@ paths:
         - name: videogame
           description: The Video Game to create
           in: body
+          required: true
           schema:
             $ref: "#/definitions/VideoGame"
       responses:
