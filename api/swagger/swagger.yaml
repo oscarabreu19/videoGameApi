@@ -41,6 +41,12 @@ paths:
     get:
       description: Get the Game System list
       operationId: getGameSystems
+      parameters:
+        - name: name
+          description: Filter by Name of de Game System
+          in: query
+          type: string
+          required: false
       responses:
         "200":
           description: Success
