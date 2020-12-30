@@ -140,6 +140,27 @@ paths:
     get:
       description: Get the Video Game list
       operationId: getVideoGames
+      parameters:
+        - name: name
+          in: query
+          type: string
+          required: false
+        - name: developer
+          in: query
+          type: string
+          required: false
+        - name: gamesystem
+          in: query
+          type: string
+          required: false
+        - name: genre
+          in: query
+          type: string
+          required: false
+        - name: year
+          in: query
+          type: string
+          required: false
       responses:
         "200":
           description: Success
