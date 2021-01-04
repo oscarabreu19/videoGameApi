@@ -47,6 +47,10 @@ paths:
           in: query
           type: string
           required: false
+        - name: sort
+          in: query
+          type: string
+          required: false
       responses:
         "200":
           description: Success
@@ -160,6 +164,10 @@ paths:
         - name: year
           in: query
           type: number
+          required: false
+        - name: sort
+          in: query
+          type: string
           required: false
       responses:
         "200":
