@@ -159,7 +159,7 @@ paths:
           required: false
         - name: year
           in: query
-          type: string
+          type: number
           required: false
       responses:
         "200":
