@@ -265,6 +265,9 @@ definitions:
       year:
         type: number
         description: Release year
+      image:
+        type: string
+        format: byte
     required:
       - name
       - developer
@@ -292,6 +295,9 @@ definitions:
       year:
         type: number
         description: Release year
+      image:
+        type: string
+        format: byte
     required:
       - id
       - name
@@ -316,6 +322,9 @@ definitions:
       description:
         type: string
         description: Description of the Game System
+      image:
+        type: string
+        format: byte
     required:
       - name
       - description
@@ -331,6 +340,9 @@ definitions:
       description:
         type: string
         description: Description of the Game System
+      image:
+        type: string
+        format: byte
     required:
       - id
       - name
