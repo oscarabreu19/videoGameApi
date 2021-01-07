@@ -267,7 +267,7 @@ definitions:
         description: Release year
       image:
         type: string
-        format: byte
+        format: binary
     required:
       - name
       - developer
@@ -297,7 +297,7 @@ definitions:
         description: Release year
       image:
         type: string
-        format: byte
+        format: binary
     required:
       - id
       - name
@@ -324,7 +324,7 @@ definitions:
         description: Description of the Game System
       image:
         type: string
-        format: byte
+        format: binary
     required:
       - name
       - description
@@ -342,7 +342,7 @@ definitions:
         description: Description of the Game System
       image:
         type: string
-        format: byte
+        format: binary
     required:
       - id
       - name
