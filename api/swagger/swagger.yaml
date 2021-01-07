@@ -373,3 +373,7 @@ definitions:
     properties:
       message:
         type: string
+      code:
+        type: number
+      description:
+        type: string
