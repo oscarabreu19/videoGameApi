@@ -169,6 +169,10 @@ paths:
           in: query
           type: string
           required: false
+        - name: fields
+          in: query
+          type: string
+          required: false
       responses:
         "200":
           description: Success
