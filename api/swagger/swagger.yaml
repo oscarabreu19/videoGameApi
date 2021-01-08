@@ -278,7 +278,7 @@ definitions:
     type: object
     properties:
       id:
-        type: number
+        type: string
         description: Identifier
       name:
         type: string
@@ -332,7 +332,7 @@ definitions:
     type: object
     properties:
       id:
-        type: number
+        type: string
         description: Identifier
       name:
         type: string
