@@ -41,6 +41,16 @@ paths:
     get:
       description: Get the Game System list
       operationId: getGameSystems
+      parameters:
+        - name: name
+          description: Filter by Name of de Game System
+          in: query
+          type: string
+          required: false
+        - name: sort
+          in: query
+          type: string
+          required: false
       responses:
         "200":
           description: Success
@@ -134,6 +144,35 @@ paths:
     get:
       description: Get the Video Game list
       operationId: getVideoGames
+      parameters:
+        - name: name
+          in: query
+          type: string
+          required: false
+        - name: developer
+          in: query
+          type: string
+          required: false
+        - name: gamesystem
+          in: query
+          type: string
+          required: false
+        - name: genre
+          in: query
+          type: string
+          required: false
+        - name: year
+          in: query
+          type: number
+          required: false
+        - name: sort
+          in: query
+          type: string
+          required: false
+        - name: fields
+          in: query
+          type: string
+          required: false
       responses:
         "200":
           description: Success
@@ -226,6 +265,9 @@ definitions:
       year:
         type: number
         description: Release year
+      image:
+        type: string
+        format: binary
     required:
       - name
       - developer
@@ -253,6 +295,9 @@ definitions:
       year:
         type: number
         description: Release year
+      image:
+        type: string
+        format: binary
     required:
       - id
       - name
@@ -277,6 +322,9 @@ definitions:
       description:
         type: string
         description: Description of the Game System
+      image:
+        type: string
+        format: binary
     required:
       - name
       - description
@@ -292,6 +340,9 @@ definitions:
       description:
         type: string
         description: Description of the Game System
+      image:
+        type: string
+        format: binary
     required:
       - id
       - name
@@ -321,4 +372,8 @@ definitions:
       - message
     properties:
       message:
+        type: string
+      code:
+        type: number
+      description:
         type: string
