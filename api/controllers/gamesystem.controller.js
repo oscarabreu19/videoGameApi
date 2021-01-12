@@ -35,10 +35,29 @@ function createGameSystem(req, res) {
     }
 }
 
+function getGameSystems(req, res) {
+    try {
+        // Receiving parameters 
+        const params = {
+            name: req.swagger.params.name.value,
+            sort: req.swagger.params.sort.value
+        };
+        
+        // Call to service
+        const result = gameSystemService.getGameSystems(params);
+
+        // Returning the result
+        res.json(result);
+    } catch (error) {
+        controllerHelper.handleErrorResponse(MODULE_NAME, getGameSystems.name, error, res);
+    }    
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
 
 module.exports = {
-    createGameSystem
+    createGameSystem,
+    getGameSystems
 };
