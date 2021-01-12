@@ -26,5 +26,6 @@ function getGameSystemByName(name) {
 //////////////////////////////////////////////////////
 
 module.exports = {
-    getGameSystemByName
+    getGameSystemById,
+    createGameSystem
 };
