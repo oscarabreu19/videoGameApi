@@ -27,7 +27,7 @@ function buildErrorMessage(text) {
 }
 
 function buildMessage(text) {
-    const jsonErrorMessage = buildErrorMessage(TITLE_MESSAGE, text);
+    const jsonErrorMessage = buildGenericMessage(TITLE_MESSAGE, text);
     return jsonErrorMessage;
 }
 
