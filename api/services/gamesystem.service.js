@@ -30,5 +30,6 @@ function createGameSystem(params) {
 //////////////////////////////////////////////////////
 
 module.exports = {
-    createGameSystem
+    createGameSystem,
+    getGameSystemByName
 };
