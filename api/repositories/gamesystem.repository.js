@@ -20,7 +20,9 @@ function getGameSystemById(id) {
 }
 
 function getGameSystemByName(name) {
-    console.log('getGameSystemByNameMock');
+    return gamesystems.find(element => {
+        return element.name === name;
+    });
 }
 
 function createGameSystem(gameSystemToCreate) {
