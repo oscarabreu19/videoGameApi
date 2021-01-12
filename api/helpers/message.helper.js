@@ -12,7 +12,7 @@ const TITLE_MESSAGE = 'message';
 //////////////////////////////////////////////////////
 
 function buildGenericMessage(nameMessage, textMessage) {
-    let jsonMessageResult = [];
+    let jsonMessageResult = {};
     jsonMessageResult[nameMessage] = textMessage;
     return jsonMessageResult;
 }
