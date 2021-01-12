@@ -11,6 +11,12 @@ let gamesystems = [];
 // PUBLIC FUNCTIONS
 //////////////////////////////////////////////////////
 
+function getGameSystemById(id) {
+    return gamesystems.find(element => {
+        return element.id === id;
+    });
+}
+
 function getGameSystemByName(name) {
     console.log('getGameSystemByNameMock');
 }
