@@ -29,6 +29,9 @@ function createGameSystem(params) {
     return gameSystemRepository.createGameSystem(params);
 }
 
+function getGameSystems(params) {
+    return gameSystemRepository.getGameSystems(params);
+}
 
 //////////////////////////////////////////////////////
 // EXPORTS
@@ -37,5 +40,6 @@ function createGameSystem(params) {
 module.exports = {
     GS_SVC_ERR_CREATE_GS_ALREADY_EXISTS_WITH_SAME_NAME,
     createGameSystem,
+    getGameSystems,
     getGameSystemByName
 };
