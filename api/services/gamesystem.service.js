@@ -20,9 +20,13 @@ function getGameSystemByName(name) {
 }
 
 function createGameSystem(params) {
-    // TODO: Este metodo tiene que ir al repositorio a crear un nuevo Game System
-    params.id = 123;
-    return params;
+    // Check if exists a gamesystem with the same name
+    const gameSystemFound = getGameSystemByName(params.name);
+
+    if(!_.isUndefined(gameSystemFound))
+        return messageHelper.buildErrorMessage(GS_SVC_ERR_CREATE_GS_ALREADY_EXISTS_WITH_SAME_NAME);
+
+    return gameSystemRepository.createGameSystem(params);
 }
 
 
