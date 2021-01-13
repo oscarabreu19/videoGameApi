@@ -11,6 +11,7 @@ const gameSystemService = require('../services/gamesystem.service.js');
 //////////////////////////////////////////////////////
 
 const MODULE_NAME = '[GameSystem Controller]';
+const GS_CT_ERR_GAMESYSTEM_NOT_FOUND = 'Gamesystem not found';
 
 //////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS
