@@ -9,7 +9,7 @@ const gameSystemRepository = require('../repositories/gamesystem.repository.js')
 // CONSTANS
 //////////////////////////////////////////////////////
 
-const GS_SVC_ERR_CREATE_GS_ALREADY_EXISTS_WITH_SAME_NAME = 'Not possible to create a Game System. There is a Game with the same name.';
+const GS_SVC_ERR_CREATE_GS_ALREADY_EXISTS_WITH_SAME_NAME = 'Not possible to create a Game System. There is a Game System with the same name.';
 
 //////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS
