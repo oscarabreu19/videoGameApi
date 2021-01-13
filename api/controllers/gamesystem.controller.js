@@ -54,11 +54,31 @@ function getGameSystems(req, res) {
     }    
 }
 
+function getGameSystemById(req, res) {
+    try {
+        const params = {
+            id: req.swagger.params.id.value
+        };
+
+        // Call to the service 
+        const result = gameSystemService.getGameSystemById(params.id);
+
+        if (!_.isUndefined(result)) {
+            res.json(result);
+        } else {
+            res.status(404).json(messageHelper.buildMessage(GS_CT_ERR_GAMESYSTEM_NOT_FOUND));
+        }
+    } catch (error) {
+        controllerHelper.handleErrorResponse(MODULE_NAME, getGameSystemById.name, error, res);
+    }
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
 
 module.exports = {
     createGameSystem,
-    getGameSystems
+    getGameSystems,
+    getGameSystemById
 };
