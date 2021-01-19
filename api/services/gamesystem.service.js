@@ -4,6 +4,7 @@ const _ = require('lodash');
 
 const messageHelper = require('../helpers/message.helper.js');
 const gameSystemRepository = require('../repositories/gamesystem.repository.js');
+const videoGameRepository = require('../repositories/videogame.repository.js');
 
 //////////////////////////////////////////////////////
 // CONSTANS
