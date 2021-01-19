@@ -10,6 +10,8 @@ const gameSystemRepository = require('../repositories/gamesystem.repository.js')
 //////////////////////////////////////////////////////
 
 const GS_SVC_ERR_CREATE_GS_ALREADY_EXISTS_WITH_SAME_NAME = 'Not possible to create a Game System. There is a Game System with the same name.';
+const GS_SVC_ERR_UPDATE_GS_NOT_FOUND_BY_ID = 'Not possible to update gamesystem. There is NOT a gamesystem with the same id to update';
+const GS_SVC_ERR_UPDATE_GS_ALREADY_EXISTS_WITH_SAME_NAME = 'Not possible to update gamesystem. There is a gamesystem with the same name to update in the system';
 
 //////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS
@@ -36,6 +38,23 @@ function getGameSystems(params) {
 function getGameSystemById(id) {
     return gameSystemRepository.getGameSystemById(id);
 }
+
+function updateGameSystem(params) {
+    const gameSystemFoundById = getGameSystemById(params.id);
+
+    // Checking if the Game System Id don't exists 
+    if (_.isUndefined(gameSystemFoundById))
+        return messageHelper.buildErrorMessage(GS_SVC_ERR_UPDATE_GS_NOT_FOUND_BY_ID)
+
+    const gameSystemFoundByName = getGameSystemByName(params.name);
+
+    if (_.isUndefined(gameSystemFoundByName) || gameSystemFoundByName.id === params.id) {
+        return gameSystemRepository.updateGameSystem(params);        
+    } else {
+        return messageHelper.buildErrorMessage(GS_SVC_ERR_UPDATE_GS_ALREADY_EXISTS_WITH_SAME_NAME);
+    }
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
@@ -45,5 +64,6 @@ module.exports = {
     createGameSystem,
     getGameSystems,
     getGameSystemByName,
-    getGameSystemById
+    getGameSystemById,
+    updateGameSystem
 };
