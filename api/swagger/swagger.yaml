@@ -358,15 +358,10 @@ definitions:
   GeneralResponse:
     type: object
     properties:
-      success:
-        type: number
-        description: Return 1 if successful
-      description:
+      message:
         type: string
-        description: A short comment
     required:
-      - success
-      - description
+      - message
   ErrorResponse:
     required:
       - message
