@@ -12,6 +12,7 @@ const gameSystemService = require('../services/gamesystem.service.js');
 
 const MODULE_NAME = '[GameSystem Controller]';
 const GS_CT_ERR_GAMESYSTEM_NOT_FOUND = 'Gamesystem not found';
+const GS_CT_DELETED_SUCCESSFULLY = 'Gamesystem deleted successfully';
 
 //////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS
