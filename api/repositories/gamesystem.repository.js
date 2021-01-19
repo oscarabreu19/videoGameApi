@@ -8,20 +8,20 @@ const shortid = require('shortid');
 //////////////////////////////////////////////////////
 
 // Define a initial set of gamesystems
-let gamesystems = [];
+let gameSystems = [];
 
 //////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS
 //////////////////////////////////////////////////////
 
 function getGameSystemById(id) {
-    return gamesystems.find(element => {
+    return gameSystems.find(element => {
         return element.id === id;
     });
 }
 
 function getGameSystemByName(name) {
-    return gamesystems.find(element => {
+    return gameSystems.find(element => {
         return element.name === name;
     });
 }
@@ -34,17 +34,17 @@ function createGameSystem(gameSystemToCreate) {
         image: gameSystemToCreate.image
     };
 
-    gamesystems.push(newGameSystem);
+    gameSystems.push(newGameSystem);
 
     return getGameSystemById(newGameSystem.id);
 }
 
 function getGameSystems(params) {
-    let gameSystemResult = gamesystems.slice();
+    let gameSystemResult = gameSystems.slice();
 
     // Filter by name 
     if (params.name !== undefined) {
-        gameSystemResult = _.filter(gamesystems, {name: params.name});
+        gameSystemResult = _.filter(gameSystems, {name: params.name});
     }
 
     // Order by name 
