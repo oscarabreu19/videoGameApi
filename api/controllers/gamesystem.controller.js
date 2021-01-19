@@ -73,6 +73,26 @@ function getGameSystemById(req, res) {
     }
 }
 
+function updateGameSystem(req, res) {
+    try {
+        const params = {
+            id: req.swagger.params.id.value,
+        }
+
+        _.assign(params, req.body);
+
+        const result = gameSystemService.updateGameSystem(params);
+
+        if (!_.isUndefined(result) && _.isUndefined(result.error)) {
+            res.json(result);
+        } else {
+            res.status(409).json(messageHelper.buildMessage(result.error));
+        }
+    } catch (error) {
+        controllerHelper.handleErrorResponse(MODULE_NAME, updateGameSystem.name, error, res);
+    }    
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
@@ -80,5 +100,6 @@ function getGameSystemById(req, res) {
 module.exports = {
     createGameSystem,
     getGameSystems,
-    getGameSystemById
+    getGameSystemById,
+    updateGameSystem
 };
