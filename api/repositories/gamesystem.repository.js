@@ -71,6 +71,19 @@ function updateGameSystem(newGameSystem) {
     return gameSystemToUpdate;
 }
 
+function deleteGameSystemById(idToRemove) {
+    const gameSystemToDelete = getGameSystemById(idToRemove);
+
+    if(gameSystemToDelete === undefined)
+        return false;
+
+    _.remove(gameSystems, (currentGameSystem) => {
+        return currentGameSystem.id === gameSystemToDelete.id;
+    });
+    
+    return true;
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
