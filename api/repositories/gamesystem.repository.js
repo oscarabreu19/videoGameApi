@@ -60,9 +60,7 @@ function getGameSystems(params) {
 }
 
 function updateGameSystem(newGameSystem) {
-    const idToSearch = newGameSystem.id;
-
-    const gameSystemToUpdate = getGameSystemById(idToSearch);
+    const gameSystemToUpdate = getGameSystemById(newGameSystem.id);
 
     if (!_.isUndefined(gameSystemToUpdate)) {
         gameSystemToUpdate.name = newGameSystem.name;
