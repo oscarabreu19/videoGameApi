@@ -93,6 +93,24 @@ function updateGameSystem(req, res) {
     }    
 }
 
+function deleteGameSystem(req, res) {
+    try {
+        const params = {
+            id: req.swagger.params.id.value
+        };
+
+        const result =  gameSystemService.deleteGameSystem(params);
+
+        if (!_.isUndefined(result) && _.isUndefined(result.error)) {
+            res.json(messageHelper.buildMessage(GS_CT_DELETED_SUCCESSFULLY));
+        } else {
+            res.status(404).json(messageHelper.buildMessage(result.error));
+        }
+    } catch (error) {
+        controllerHelper.handleErrorResponse(MODULE_NAME, deleteGameSystem.name, error, res);
+    }
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
@@ -101,5 +119,6 @@ module.exports = {
     createGameSystem,
     getGameSystems,
     getGameSystemById,
-    updateGameSystem
+    updateGameSystem,
+    deleteGameSystem
 };
