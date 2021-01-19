@@ -93,5 +93,6 @@ module.exports = {
     getGameSystemById,
     getGameSystems,
     createGameSystem,
-    updateGameSystem
+    updateGameSystem,
+    deleteGameSystemById
 };
