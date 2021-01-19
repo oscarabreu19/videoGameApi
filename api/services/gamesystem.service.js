@@ -58,6 +58,28 @@ function updateGameSystem(params) {
     }
 }
 
+function deleteGameSystem(params) {
+    const gameSystemToEliminate = getGameSystemById(params.id);
+    
+    // If the GameSystem doesn't exist
+    if (_.isUndefined(gameSystemToEliminate))
+        return messageHelper.buildErrorMessage(GS_SVC_ERR_DELETE_GS_NOT_FOUND_BY_ID);
+
+    // If this GameSystem was used in a VideoGame
+    const filterParams = { gamesystem: gameSystemToEliminate.name };
+    const videoGamesList = videoGameRepository.getVideoGames(filterParams);
+
+    if (!_.isUndefined(videoGamesList) && videoGamesList.length > 0)
+        return messageHelper.buildErrorMessage(GS_SVC_ERR_DELETE_VG_EXISTS_ASSOCIATED);
+
+    const resultDeletion = gameSystemRepository.deleteGameSystemById(params.id);
+
+    if (!resultDeletion)
+        return messageHelper.buildErrorMessage(GS_SVC_ERR_DELETE_GS_NOT_FOUND_BY_ID);
+
+    return true;
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
@@ -68,5 +90,6 @@ module.exports = {
     getGameSystems,
     getGameSystemByName,
     getGameSystemById,
-    updateGameSystem
+    updateGameSystem,
+    deleteGameSystem
 };
