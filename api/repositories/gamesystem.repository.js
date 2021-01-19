@@ -59,6 +59,20 @@ function getGameSystems(params) {
     return gameSystemResult;
 }
 
+function updateGameSystem(newGameSystem) {
+    const idToSearch = newGameSystem.id;
+
+    const gameSystemToUpdate = getGameSystemById(idToSearch);
+
+    if (!_.isUndefined(gameSystemToUpdate)) {
+        gameSystemToUpdate.name = newGameSystem.name;
+        gameSystemToUpdate.description = newGameSystem.description;
+        gameSystemToUpdate.image = newGameSystem.image;
+    }
+
+    return gameSystemToUpdate;
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
@@ -67,5 +81,6 @@ module.exports = {
     getGameSystemByName,
     getGameSystemById,
     getGameSystems,
-    createGameSystem
+    createGameSystem,
+    updateGameSystem
 };
