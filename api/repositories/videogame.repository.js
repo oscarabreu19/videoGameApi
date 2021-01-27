@@ -30,6 +30,10 @@ function stripVideoGames(fields, arrayVideoGames) {
     });
 }
 
+function getVideoGameById(videoGameId) {
+    return videoGames.find(aVideoGame => aVideoGame.id === videoGameId);
+}
+
 function getVideoGames(params) {
     // Make a copy the original array 
     let videoGamesResult = videoGames.slice();
