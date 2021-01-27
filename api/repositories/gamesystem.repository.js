@@ -15,15 +15,11 @@ let gameSystems = [];
 //////////////////////////////////////////////////////
 
 function getGameSystemById(id) {
-    return gameSystems.find(element => {
-        return element.id === id;
-    });
+    return gameSystems.find(element => element.id === id);
 }
 
 function getGameSystemByName(name) {
-    return gameSystems.find(element => {
-        return element.name === name;
-    });
+    return gameSystems.find(element => element.name === name);
 }
 
 function createGameSystem(gameSystemToCreate) {
