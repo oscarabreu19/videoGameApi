@@ -22,6 +22,14 @@ let videoGames = [];
 // PUBLIC FUNCTIONS
 //////////////////////////////////////////////////////
 
+function stripVideoGames(fields, arrayVideoGames) {
+    const arrayFields = fields.split(',');
+
+    return _.map(arrayVideoGames, videogame => {
+        return _.pick(videogame, arrayFields);
+    });
+}
+
 function getVideoGames(params) {
     // TODO: [OG][777] Esto es un mock que debe susttituirse
     return [];
