@@ -86,6 +86,16 @@ function getVideoGames(params) {
 
     return videoGamesResult;
 }
+
+function createVideoGame(videoGameToCreate) {
+    const newVideoGame = {
+        id: shortid.generate(),
+        ...videoGameToCreate
+    };
+    
+    videoGames.push(newVideoGame);
+
+    return getVideoGameById(newVideoGame.id);
 }
 
 //////////////////////////////////////////////////////
@@ -93,5 +103,6 @@ function getVideoGames(params) {
 //////////////////////////////////////////////////////
 
 module.exports = {
-    getVideoGames
+    getVideoGames,
+    createVideoGame
 };
