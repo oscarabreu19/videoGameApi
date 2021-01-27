@@ -31,8 +31,57 @@ function stripVideoGames(fields, arrayVideoGames) {
 }
 
 function getVideoGames(params) {
-    // TODO: [OG][777] Esto es un mock que debe susttituirse
-    return [];
+    // Make a copy the original array 
+    let videoGamesResult = videoGames.slice();
+
+    // Filter by name 
+    if (params.name !== undefined) {
+        videoGamesResult = _.filter(videoGamesResult, {name: params.name});
+    }
+
+    // Filter by developer 
+    if (params.developer !== undefined) {
+        videoGamesResult = _.filter(videoGamesResult, {developer: params.developer});
+    }
+
+    // Filter by gamesystemId 
+    if (params.gamesystem !== undefined) {
+        videoGamesResult = _.filter(videoGamesResult, {gamesystem: params.gamesystem});
+    }
+
+    // Filter by genre 
+    if (params.genre !== undefined) {
+        videoGamesResult = _.filter(videoGamesResult, {genre: params.genre});
+    }
+
+    // Filter by year 
+    if (params.year !== undefined) {
+        videoGamesResult = _.filter(videoGamesResult, {year: params.year});
+    }
+
+    // Order by 
+    if (params.sort !== undefined) {
+        let direction;
+        let fieldName;
+
+        if (_.startsWith(params.sort, '-')) {
+            direction = 'desc';
+            fieldName = params.sort.substring(1);
+        } else {
+            direction = 'asc';
+            fieldName = params.sort;
+        }
+
+        videoGamesResult = _.sortByOrder(videoGamesResult, [fieldName], [direction]);
+    }
+
+    // Returning only spesific fields 
+    if (params.fields !== undefined) {
+        videoGamesResult = stripVideoGames(params.fields, videoGamesResult);
+    }
+
+    return videoGamesResult;
+}
 }
 
 //////////////////////////////////////////////////////
