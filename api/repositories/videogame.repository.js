@@ -104,5 +104,6 @@ function createVideoGame(videoGameToCreate) {
 
 module.exports = {
     getVideoGames,
-    createVideoGame
+    createVideoGame,
+    getVideoGameById
 };
