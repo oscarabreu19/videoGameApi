@@ -11,6 +11,7 @@ const messageHelper = require('../helpers/message.helper.js');
 //////////////////////////////////////////////////////
 
 const MODULE_NAME = '[VideoGame Controller]';
+const VG_CT_ERR_VIDEOGAME_NOT_FOUND = 'Videogame not found';
 
 //////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS
