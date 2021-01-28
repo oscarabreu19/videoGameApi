@@ -32,10 +32,29 @@ function createVideoGame(req, res) {
     }
 }
 
+function getVideoGames(req, res) {
+    try {
+        let params = {};
+    
+        for (const key in req.swagger.params) {
+            if (Object.hasOwnProperty.call(req.swagger.params, key)) {
+                params[key] = req.swagger.params[key].value;
+            }
+        }
+
+        const result = videoGameService.getVideoGames(params);
+
+        res.json(result);
+    } catch (error) {
+        return controllerHelper.handleErrorResponse(MODULE_NAME, getVideoGames.name, error, res);
+    }
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
 
 module.exports = {
-    createVideoGame
+    createVideoGame,
+    getVideoGames
 };
