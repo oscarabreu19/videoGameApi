@@ -51,11 +51,25 @@ function getVideoGames(req, res) {
     }
 }
 
+function getVideoGameById(req, res) {
+    try {
+        const result = videoGameService.getVideoGameById(req.swagger.params.id.value);
+
+        if (!_.isUndefined(result))
+            return res.json(result);
+
+        res.status(404).json(messageHelper.buildMessage());
+    } catch (error) {
+        return controllerHelper.handleErrorResponse(MODULE_NAME, getVideoGameById.name, error, res);
+    }
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
 
 module.exports = {
     createVideoGame,
-    getVideoGames
+    getVideoGames,
+    getVideoGameById
 };
