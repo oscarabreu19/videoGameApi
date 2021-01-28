@@ -49,11 +49,16 @@ function getVideoGames(params) {
     return videoGameRepository.getVideoGames(params);
 }
 
+function getVideoGameById(id) {
+    return videoGameRepository.getVideoGameById(id);
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
 
 module.exports = {
     createVideoGame,
-    getVideoGames
+    getVideoGames,
+    getVideoGameById
 };
