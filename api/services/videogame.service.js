@@ -11,6 +11,7 @@ const _ = require('lodash');
 const gameSystemService = require('../services/gamesystem.service.js');
 const messageHelper = require('../helpers/message.helper.js');
 const videoGameRepository = require('../repositories/videogame.repository.js');
+const { request } = require('express');
 
 //////////////////////////////////////////////////////
 // CONSTANS
@@ -44,10 +45,15 @@ function createVideoGame(params) {
 
 }
 
+function getVideoGames(params) {
+    return videoGameRepository.getVideoGames(params);
+}
+
 //////////////////////////////////////////////////////
 // EXPORTS
 //////////////////////////////////////////////////////
 
 module.exports = {
-    createVideoGame
+    createVideoGame,
+    getVideoGames
 };
